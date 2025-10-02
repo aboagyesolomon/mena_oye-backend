@@ -10,7 +10,16 @@ const port = process.env.PORT || 4000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const allowedOrigins = ['http://localhost:3000', 'https://menaoye-guesthouse.vercel.app',"https://menaoye.com"];
+// const allowedOrigins = ['http://localhost:3000', 'https://menaoye-guesthouse.vercel.app',"https://menaoye.com"];
+
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://menaoye-guesthouse.vercel.app',
+  'https://menaoye.com',
+  'https://www.menaoye.com'  
+];
+
+
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin || allowedOrigins.includes(origin)) {
